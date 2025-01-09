@@ -1,10 +1,31 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import { gsap } from "gsap";
+import Flip from "gsap/Flip";
+
+// Register GSAP Flip plugin
+gsap.registerPlugin(Flip);
 
 const ServicesSection = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const cardsRef = useRef([]); // Store references to card elements
 
   const handleCardClick = (index) => {
-    setActiveIndex(index === activeIndex ? null : index);
+    const state = Flip.getState(cardsRef.current); // Capture the state of cards before the change
+
+    // Update classes directly on DOM (to avoid React delays)
+    cardsRef.current.forEach((card, idx) => {
+      card.classList.remove("active", "is-inactive");
+      if (index === idx) {
+        card.classList.add("active");
+      } else {
+        card.classList.add("is-inactive");
+      }
+    });
+
+    // Trigger the Flip animation
+    Flip.from(state, {
+      duration: 1,
+      ease: "expo.out",
+    });
   };
 
   const cardData = [
@@ -19,9 +40,8 @@ const ServicesSection = () => {
       {cardData.map((card, index) => (
         <div
           key={index}
-          className={`card ${activeIndex === index ? "active" : ""} ${
-            activeIndex !== null && activeIndex !== index ? "is-inactive" : ""
-          }`}
+          ref={(el) => (cardsRef.current[index] = el)} // Store reference to the card
+          className="card"
           onClick={() => handleCardClick(index)}
         >
           <h1>{card.title}</h1>
