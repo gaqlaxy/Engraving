@@ -22,11 +22,11 @@
   }
 
   /* Services Section  */
-  section {
+  .services-section {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 3rem;
-    margin: 10rem 30rem;
+    margin: 4rem 30rem;
   }
 
   .card {
@@ -37,7 +37,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #93a9ff;
+    background-color: #e6c200;
     grid-column: span 3;
     font-size: 1.2rem;
     padding: 5rem;

@@ -36,19 +36,26 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section>
-      {cardData.map((card, index) => (
-        <div
-          key={index}
-          ref={(el) => (cardsRef.current[index] = el)} // Store reference to the card
-          className="card"
-          onClick={() => handleCardClick(index)}
-        >
-          <h1>{card.title}</h1>
-          <p>{card.text}</p>
+    <>
+      <section>
+        <h1 className="text-3xl font-extrabold tracking-wide text-white text-center mt-10">
+          Our <span className="text-[#e6c200]">Services</span>
+        </h1>
+        <div className="services-section">
+          {cardData.map((card, index) => (
+            <div
+              key={index}
+              ref={(el) => (cardsRef.current[index] = el)} // Store reference to the card
+              className="card"
+              onClick={() => handleCardClick(index)}
+            >
+              <h1>{card.title}</h1>
+              <p>{card.text}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </section>
+      </section>
+    </>
   );
 };
 
