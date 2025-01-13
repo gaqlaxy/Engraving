@@ -4,11 +4,29 @@
 @tailwind utilities;
 
 @layer components {
+  /* Navbar  */
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    height: 24px;
+    width: 28px;
+  }
+
+  .nav-menu span {
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  /* Hero section  */
   .hero-section {
     position: relative; /* Establish a positioning context for the pseudo-element */
     min-height: 100vh;
     z-index: 0; /* Ensure the pseudo-element is behind other content */
     overflow: hidden; /* Clip the pseudo-element to the container */
+    margin: 0 2rem;
   }
 
   .hero-section::before {
@@ -77,5 +95,27 @@
 
   .card.is-inactive {
     grid-column: span 2;
+  }
+
+  /* About Section */
+
+  /* @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) or
+    (-webkit-clip-path: polygon(0 0)) {
+    .aboutus {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+      height: 95vh;
+    }
+  } */
+  .aboutus {
+    background-color: wheat;
+    /* -webkit-transform: skewY(-7deg); */
+    transform: skewY(-7deg);
+    /* padding: 20rem 0; */
+    margin: 1rem 2rem 0 2rem;
+  }
+  .aboutus > * {
+    -webkit-transform: skewY(7deg);
+    transform: skewY(7deg);
   }
 }
