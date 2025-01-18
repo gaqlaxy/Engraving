@@ -41,7 +41,7 @@ const ServicesSection = () => {
         <h1 className="text-3xl font-extrabold tracking-wide text-white text-center mt-10">
           Our <span className="text-[#e6c200]">Services</span>
         </h1>
-        <div className="services-section">
+        <div className="services-section relative">
           {cardData.map((card, index) => (
             <div
               key={index}
@@ -53,6 +53,33 @@ const ServicesSection = () => {
               <p>{card.text}</p>
             </div>
           ))}
+
+          <div className="arrow-animation">
+            <svg
+              width="120"
+              height="80"
+              viewBox="0 0 120 80"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 70 Q60 10, 110 70"
+                stroke="#FFD700"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="5"
+              />
+
+              <path
+                d="M100 60 L110 70 L100 80"
+                fill="none"
+                stroke="#FFD700"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
         </div>
       </section>
     </>

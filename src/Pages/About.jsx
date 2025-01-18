@@ -4,8 +4,8 @@ export default function About() {
   return (
     <>
       <div className="aboutus flex justify-between relative ">
-        <div className="aboutus-content">
-          <h1>About us</h1>
+        <div className="aboutus-content p-10">
+          <h1 className="text-4xl font-bold ">About us</h1>
           <p className="">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
             minima consectetur mollitia corporis exercitationem, doloribus ab
@@ -17,12 +17,12 @@ export default function About() {
           <img
             src="heroimg2.jpg"
             alt=""
-            className="w-1/2 absolute top-[10.5rem] right-[11rem] z-10"
+            className="w-1/2  abs top-[-2rem] left-0 z-10"
           />
           <img
             src="heroimg3.jpg"
             alt=""
-            className="w-1/2 absolue top-1 right-2 z-10"
+            className="w-1/2 absolute top-[10.5rem] right-[11rem] z-10"
           />
           <img
             src="heroimg1.jpg"

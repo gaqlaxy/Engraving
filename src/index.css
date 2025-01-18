@@ -58,6 +58,30 @@
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 3rem;
     margin: 4rem 30rem;
+    position: relative;
+  }
+  .arrow-animation {
+    position: absolute;
+    top: 2rem; /* Adjust based on card positioning */
+    left: -8rem; /* Adjust near the highlighted card */
+    animation: arrow-pulse 1.5s infinite ease-in-out;
+  }
+
+  @keyframes arrow-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  .highlight-card {
+    position: relative;
+    /* Add additional styles for the highlighted card if needed */
   }
 
   .card {
@@ -117,15 +141,22 @@
     -webkit-transform: skewY(7deg);
     transform: skewY(7deg);
   }
+
+  .aboutus-img {
+    position: relative; /* Ensures child images are positioned correctly */
+  }
+
   .aboutus-img img {
+    /* position: absolute; Ensure absolute positioning */
     transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
-    border: 1px solid transparent; /* Initial border */
+    border: 1px solid transparent; /* Default border */
+    width: 50%; /* Maintain consistency */
   }
 
   .aboutus-img img:hover {
-    transform: scale(1.2); /* Scale up the image on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add shadow for emphasis */
-    border-color: #e6c200; /* Highlight border color */
-    z-index: 20; /* Ensure the image appears above others */
+    transform: scale(1.2); /* Scale up on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add shadow */
+    border-color: #e6c200; /* Highlight border */
+    z-index: 30; /* Bring to front */
   }
 }
