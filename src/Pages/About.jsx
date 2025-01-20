@@ -17,17 +17,17 @@ export default function About() {
           <img
             src="heroimg2.jpg"
             alt=""
-            className="w-1/2  abs top-[-2rem] left-0 z-10"
+            className="w-1/2 relative top-[0rem] left-[-17px] z-10"
           />
           <img
             src="heroimg3.jpg"
             alt=""
-            className="w-1/2 absolute top-[10.5rem] right-[11rem] z-10"
+            className="w-1/2 absolute top-[9.5rem] right-[11rem] z-20"
           />
           <img
             src="heroimg1.jpg"
             alt=""
-            className="w-1/2 absolute right-[2rem] top-[1.25rem] z-0 "
+            className="w-1/2 absolute right-[2rem] top-[1.25rem] z-10 "
           />
         </div>
       </div>
